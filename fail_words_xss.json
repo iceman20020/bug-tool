@@ -1,0 +1,41 @@
+{
+  "regex": [
+    "<script[^>]*>alert\\(",
+    "<script[^>]*>prompt\\(",
+    "<script[^>]*>confirm\\(",
+    "onerror\\s*=\\s*alert\\(",
+    "onload\\s*=\\s*alert\\(",
+    "javascript:alert\\(",
+    "<svg[^>]*onload",
+    "<img[^>]*onerror",
+    "<iframe[^>]*srcdoc",
+    "<body[^>]*onload",
+    "document\\.cookie",
+    "eval\\(.*location",
+    "String\\.fromCharCode"
+  ],
+  "literal": [
+    "<script>alert(1)</script>",
+    "<script>alert('XSS')</script>",
+    "\"><script>alert(1)</script>",
+    "';alert(1);//",
+    "javascript:alert(1)",
+    "<svg/onload=alert(1)>",
+    "<img src=x onerror=alert(1)>"
+  ],
+  "negative": [
+    "404 Not Found",
+    "400 Bad Request",
+    "403 Forbidden",
+    "Access Denied",
+    "Cloudflare",
+    "cf-error-details",
+    "Attention Required",
+    "Please enable JavaScript",
+    "One more step",
+    "Request Rejected",
+    "Web Application Firewall",
+    "Your request has been blocked",
+    "The requested URL was rejected"
+  ]
+}
